@@ -37,3 +37,8 @@ body > .container {
 code {
     font-size: 80%;
 }
+
+#bgquote{
+    margin-top:50px;
+    margin-bottom:50px;
+}
