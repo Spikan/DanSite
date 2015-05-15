@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -37,13 +38,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Dan Chick</a>
+            <a id="brand" class="navbar-brand" href="#">Dan Chick</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a data-target="#" data-toggle="pill" href="#">Home</a></li>
-                <li><a data-target="#" data-toggle="pill" href="#about">About</a></li>
-                <li><a data-target="#" data-toggle="pill" href="#contact">Contact</a></li>
+            <ul id="navul" class="nav navbar-nav">
+                <li id="home" class="active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Portfolio <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
@@ -77,7 +78,7 @@
 </span>
 
        <section id="about">
-           <div class="panel panel-primary">
+           <div class="panel panel-default">
                <div class="panel-heading">
                    <h3 class="panel-title">About</h3>
                </div>
@@ -96,23 +97,27 @@
            </div>
        </section>
 
+    <section id="contact">
+
+    </section>
+
 
 </div>
 
 <footer class="footer">
-    <div class="container-fluid">
-        <p>
+    <div id="footerdiv" class="container-fluid">
+        <p id="footername" class="pull-right">
             Created By Dan Chick ©2015
+        </p>
         <a href="https://github.com/spikan">
-            <img src="icons/github/github-48-black.png" title="Github Profile" alt="Github Profile"/>
+            <img src="icons/github/github-48.png" title="Github Profile" alt="Github Profile"/>
         </a>
         <a href="http://stackoverflow.com/users/4658903/the-grickus">
-            <img src="icons/stackoverflow/stackoverflow-48-black.png" title="Stackoverflow Profile" alt="Stackoverflow Profile"/>
+            <img src="icons/stackoverflow/stackoverflow-48.png" title="Stackoverflow Profile" alt="Stackoverflow Profile"/>
         </a>
         <a href="https://www.linkedin.com/profile/view?id=124932909">
-            <img src="icons/linkedin/linkedin-48-black.png" title="LinkedIn Profile" alt="LinkedIn Profile"/>
+            <img src="icons/linkedin/linkedin-48.png" title="LinkedIn Profile" alt="LinkedIn Profile"/>
         </a>
-        </p>
     </div>
 </footer>
 
@@ -120,8 +125,20 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="js/active.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    $('#navul').find('a').click(function() {
+        //Removes the active class from any <li> elements
+        $('#navul').find('li.active').removeClass('active');
+        //Adds it to the current element
+        $(this).parent('li').addClass('active');
+    });
+
+    $('.navbar-brand').click(function() {
+        $('#navul').find('li.active').removeClass('active');
+        $('#home').addClass('active');
+    });
+</script>
 </body>
 </html>
